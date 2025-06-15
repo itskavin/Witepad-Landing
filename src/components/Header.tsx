@@ -64,18 +64,17 @@ export const Header = ({
     setTimeout(() => setIsNavigating(false), 300);
   };
 
-  return <>
-      {/* Modern floating glass navbar */}
-      <nav className="fixed left-1/2 top-4 z-[99] -translate-x-1/2 w-[98vw] max-w-5xl rounded-2xl shadow-2xl bg-black/85 ring-2 ring-cyan-400/15 backdrop-blur-2xl px-4 py-1.5 flex items-center justify-between transition-all border border-cyan-400/10 gap-2">
+  return <>      {/* Modern floating glass navbar */}
+      <nav className="fixed left-1/2 top-4 z-[99] -translate-x-1/2 w-[98vw] max-w-5xl px-4 py-1.5 flex items-center justify-between transition-all gap-2">
         {/* Logo/brand */}
-        <div className="flex items-center gap-2 cursor-pointer group" onClick={() => handleNavigation('/')}>
+        <div className="flex items-center gap-2 cursor-pointer group bg-gray-900/50 rounded-full p-2 backdrop-blur-sm border border-gray-700/50" onClick={() => handleNavigation('/')}>
           <div className="w-8 h-8 rounded-lg flex items-center justify-center shadow-lg hover:scale-110 hover:rotate-6 transition-transform overflow-hidden">
             <img alt="Witepad Logo" className="w-full h-full object-contain" src="/witepad-logo.png" />
           </div>
           <span className="text-lg font-bold bg-gradient-to-r from-orange-400 via-white to-orange-400 bg-clip-text text-transparent tracking-tight select-none">
             Witepad
           </span>
-        </div>        <div className="hidden md:flex flex-1 items-center justify-center">
+        </div><div className="hidden md:flex flex-1 items-center justify-center">
           <ul className="flex gap-2 bg-gray-900/50 rounded-full p-1 backdrop-blur-sm border border-gray-700/50">
             {navItems.map(item => {
               const isAnchor = item.href.startsWith('#');
@@ -124,7 +123,7 @@ export const Header = ({
             })}
           </ul>
         </div>        {/* Mobile menu button */}
-        <div className="md:hidden">
+        <div className="md:hidden bg-gray-900/50 rounded-full backdrop-blur-sm border border-gray-700/50">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 text-gray-300 hover:text-white transition-colors"
@@ -133,7 +132,7 @@ export const Header = ({
           </button>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 bg-gray-900/50 rounded-full p-1 backdrop-blur-sm border border-gray-700/50">
           {user ? (
             <UserAvatar />
           ) : (
